@@ -1,7 +1,10 @@
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WordPress Salt Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Salt</title>
   </head>
   <body>
     <div class="salt"></div>
@@ -12,7 +15,7 @@
         return Array.from(arr, dec => ('0' + dec.toString(16)).substr(-2)).join('');
       };
       var keys = ['AUTH_KEY', 'SECURE_AUTH_KEY', 'LOGGED_IN_KEY', 'NONCE_KEY', 'AUTH_SALT', 'SECURE_AUTH_SALT', 'LOGGED_IN_SALT', 'NONCE_SALT'];
-      keys.forEach(key => document.querySelector('.salt').innerHTML += `${key}=${salt()}\n`);
+      keys.forEach(key => document.querySelector('.salt').innerHTML += `${key}=${salt()}\n`)+'<br>';
     </script>
   </body>
 </html>
